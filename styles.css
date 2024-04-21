@@ -29,16 +29,16 @@ body {
 
 .sepia {
     --bg1: #eadbcb;
-    --bg2: #e3ceb9;
-    --bg3: #dcc1a7;
+    --bg2: #dcc1a7;
+    --bg3: #e3ceb9;
     --text: black;
     --textf: #0000008a;
 }
 
 .light {
     --bg1: #eceff4;
-    --bg2: #e5e9f0;
     --bg3: #d8dee9;
+    --bg2: #e5e9f0;
     --text: black;
     --textf: #0000008a;
 }
@@ -75,7 +75,6 @@ body {
     background-color: #ffffff19;
     padding: 10px;
     border-radius: 5px;
-    font-size: 15px;
 }
 
 .d {margin-left: 0.5vw;}
@@ -85,13 +84,14 @@ body {
 .dropdown:hover .greeting,
 .content a:hover {text-decoration: underline;}
 
+.toggle, .scroll, .content {font-size: 15px;}
+
 /* Theme Toggle */
 .toggle {
     margin-right: 2vw;
     top: 2vh;
     position: fixed;
     right: 0;
-    font-size: 15px;
     min-height: 36px;
     justify-content: center;
     align-items: center;
@@ -144,7 +144,6 @@ body {
     transform: translateX(-50%);
     bottom: 0;
     text-align: center;
-    font-size: 15px;
 }
 
 /* Second Section */
@@ -203,7 +202,7 @@ body {
 .second a:hover .title {text-decoration: underline;}
 
 @media screen
-  and (max-device-width: 480px)
+  and (max-device-width: 765px)
   and (orientation: portrait){
     
     .second {
@@ -225,4 +224,9 @@ body {
         transform: translateY(-30%);
         position: fixed;
     }
+
+    .content {display: block;}
+
+    body {font-size: x-large;}
+    .content, .toggle, .scroll {font-size: large;}
 }
