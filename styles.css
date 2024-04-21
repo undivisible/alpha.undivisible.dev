@@ -224,21 +224,6 @@ body {
         
     }
 
-    /* .links {
-        top: 60%;
-        transform: translateY(-60%);
-        margin-left: 2%;
-        left: 0;
-        text-align: start;
-    }
-
-    .intro {
-        margin-left: 2%;
-        top: 30%;
-        transform: translateY(-30%);
-        position: fixed;
-    } */
-
     .content {display: block;}
 
     body {font-size: x-large;}
