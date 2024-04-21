@@ -1,4 +1,6 @@
 /* General Styles */
+html {overflow: hidden;}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -205,7 +207,10 @@ body {
   and (max-device-width: 765px)
   and (orientation: portrait){
 
-    body {position: fixed;}
+    body {
+        position: fixed;
+        overflow-y: scroll;
+    }
     
     .element {
         width: 98vw;
