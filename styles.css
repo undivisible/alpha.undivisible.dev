@@ -1,3 +1,16 @@
+/* General Styles */
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    color: var(--text);
+    font-family: "Space Grotesk", "Wix MadeFor Display", "Noto Sans SC", "Rubik", sans-serif;
+    font-size: 20px;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+/* Color Schemes */
 .dark {
     --bg1: black;
     --bg2: #191919;
@@ -19,7 +32,7 @@
     --bg2: #e3ceb9;
     --bg3: #dcc1a7;
     --text: black;
-    --textf: #0000008a; 
+    --textf: #0000008a;
 }
 
 .light {
@@ -27,40 +40,26 @@
     --bg2: #e5e9f0;
     --bg3: #d8dee9;
     --text: black;
-    --textf: #0000008a; 
+    --textf: #0000008a;
 }
 
-body {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    color: var(--text);
-    font-family: "Space Grotesk", "Wix MadeFor Display", "Noto Sans SC", "Rubik", sans-serif;
-    font-size: 20px;
-    margin: 0;
-    scroll-snap-type: x mandatory;
-}
-
-body > div {scroll-snap-align: start;}
-
+/* Sticky Header */
 .sticky {
     background-color: var(--bg1);
     display: flex;
-    flex-direction: row;
-    position: absolute;
+    justify-content: space-between;
+    position: sticky;
     top: 0;
-    width: 100vw;
     z-index: 2;
     cursor: default;
 }
 
+/* Language Selector */
 .dropdown {
-    position: relative;
+    position: fixed;
     display: inline-block;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    left: 2vw;
+    top: 2vh;
 }
 
 .greeting {
@@ -81,24 +80,25 @@ body > div {scroll-snap-align: start;}
 
 .d {margin-left: 0.5vw;}
 
+.dropdown:hover .content {display: block;}
+
+.dropdown:hover .greeting,
+.content a:hover {text-decoration: underline;}
+
+/* Theme Toggle */
 .toggle {
-    padding-right: 1vw;
-    padding-left: 10px;
-    padding-bottom: 5px;
-    padding-top: 1vh;
-    display: inline-block;
-    background-color: var(--bg1);
-    position: relative;
-    margin-right: 0;
-    margin-left: auto;
+    margin-right: 2vw;
+    top: 2vh;
+    position: fixed;
+    right: 0;
     font-size: 15px;
     min-height: 36px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
-.content a:hover {text-decoration: underline;}
-.dropdown:hover .content {display: block;}
-.dropdown:hover .greeting {text-decoration: underline;}
-
+/* First Section */
 .first {
     background-color: var(--bg1);
     height: 100vh;
@@ -106,46 +106,25 @@ body > div {scroll-snap-align: start;}
     position: relative;
     display: flex;
     justify-content: space-between;
-}
-
-.scroll {
-    position: absolute;
-    margin-bottom: 1%;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    text-align: center; 
-    font-size: 15px;
-}
-
-.second {
-    background-color: var(--bg2);
-    border-radius: 20px;
-    height: 100vh;
-    position: relative;
-}
-
-.second div {
-    background-color: var(--bg3);
-    border-radius: 20px;
+    scroll-snap-align: start;
 }
 
 .intro {
-    margin-left: 1%;
-    left: 0;
+    margin-left: 2%;
     top: 50%;
     transform: translateY(-50%);
-    position: absolute;
+    position: fixed;
     text-align: start;
     color: var(--textf);
+    z-index: 1;
 }
 
-span {color: var(--text);}
+.intro span {color: var(--text);}
 
 .links {
     top: 50%;
     transform: translateY(-50%);
-    margin-right: 1%;
+    margin-right: 2%;
     right: 0;
     position: absolute;
     text-align: end;
@@ -156,6 +135,76 @@ span {color: var(--text);}
     text-decoration: none;
 }
 
-.link:hover {
-    text-decoration: underline;
+.link:hover {text-decoration: underline;}
+
+.scroll {
+    position: absolute;
+    margin-bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    text-align: center;
+    font-size: 15px;
 }
+
+/* Second Section */
+.twob {
+    background-color: var(--bg1);
+    scroll-snap-align: start;
+}
+
+.second {
+    background-color: var(--bg2);
+    height: 100vh;
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.second * {
+    background-color: var(--bg3);
+    border-radius: 20px;
+}
+
+.left {
+    width: 48.5vw;
+    position: absolute;
+    left: 0;
+    margin-left: 1vw;
+    height: 98%;
+    top: 1vh;
+}
+
+.upright {
+    width: 48.5vw;
+    position: absolute;
+    right: 0;
+    margin-right: 1vw;
+    height: 48.5%;
+    top: 1vh;
+}
+
+.downright {
+    width: 48.5vw;
+    position: absolute;
+    right: 0;
+    margin-right: 1vw;
+    height: 48.5%;
+    bottom: 1vh;
+}
+
+.title {
+    right: 0;
+    margin-right: 1vw;
+    bottom: 0;
+    margin-bottom: 1vh;
+    position: absolute;
+    text-decoration: none;
+}
+
+.aboxes {
+    height: 100%;
+    width: 100%;
+}
+
+.aboxes:hover .title {text-decoration: underline;}
