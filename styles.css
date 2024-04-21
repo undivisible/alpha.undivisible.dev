@@ -204,6 +204,8 @@ body {
 @media screen
   and (max-device-width: 765px)
   and (orientation: portrait){
+
+    body {position: fixed;}
     
     .element {
         width: 98vw;
