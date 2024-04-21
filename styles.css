@@ -164,11 +164,11 @@ body {
 .second * {
     background-color: var(--bg3);
     border-radius: 20px;
+    position: absolute;
 }
 
 .left {
     width: 48.5vw;
-    position: absolute;
     left: 0;
     margin-left: 1vw;
     height: 98%;
@@ -177,7 +177,6 @@ body {
 
 .upright {
     width: 48.5vw;
-    position: absolute;
     right: 0;
     margin-right: 1vw;
     height: 48.5%;
@@ -186,7 +185,6 @@ body {
 
 .downright {
     width: 48.5vw;
-    position: absolute;
     right: 0;
     margin-right: 1vw;
     height: 48.5%;
@@ -202,9 +200,29 @@ body {
     text-decoration: none;
 }
 
-.aboxes {
-    height: 100%;
-    width: 100%;
-}
+.second a:hover .title {text-decoration: underline;}
 
-.aboxes:hover .title {text-decoration: underline;}
+@media screen
+  and (max-device-width: 480px)
+  and (orientation: portrait){
+    
+    .second {
+        width: 98vw;
+        height: 32%;
+    }
+
+    .links {
+        top: 60%;
+        transform: translateY(-60%);
+        margin-left: 2%;
+        left: 0;
+        text-align: start;
+    }
+
+    .intro {
+        margin-left: 2%;
+        top: 30%;
+        transform: translateY(-30%);
+        position: fixed;
+    }
+}
