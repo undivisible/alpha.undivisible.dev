@@ -1,5 +1,8 @@
 /* General Styles */
-html {overflow: hidden;}
+html {
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
 
 body {
     width: 100vw;
@@ -223,6 +226,8 @@ body {
         position: absolute;
         
     }
+
+    .first, .second {height: 95vh;}
 
     .content {display: block;}
 
