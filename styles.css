@@ -1,3 +1,42 @@
+:root {
+    --rotate1: 8deg;
+    --loc1: 8%;
+    --loctwo1: 8%;
+    --rotate2: 8deg;
+    --loc2: 8%;
+    --loctwo2: 8%;
+    --rotate3: 8deg;
+    --loc3: 8%;
+    --loctwo3: 8%;
+    --rotate4: 8deg;
+    --loc4: 8%;
+    --loctwo4: 8%;
+    --rotate5: 8deg;
+    --loc5: 8%;
+    --loctwo5: 8%;
+    --rotate6: 8deg;
+    --loc6: 8%;
+    --loctwo6: 8%;
+    --rotate7: 8deg;
+    --loc7: 8%;
+    --loctwo7: 8%;
+    --rotate8: 8deg;
+    --loc8: 8%;
+    --loctwo8: 8%;
+    --rotate9: 8deg;
+    --loc9: 8%;
+    --loctwo9: 8%;
+    --rotate10: 8deg;
+    --loc10: 8%;
+    --loctwo10: 8%;
+    --rotate11: 8deg;
+    --loc11: 8%;
+    --loctwo11: 8%;
+    --rotate12: 8deg;
+    --loc12: 8%;
+    --loctwo12: 8%;
+}
+
 /* General Styles */
 html {
     overflow: hidden;
@@ -13,6 +52,37 @@ body {
     font-size: 20px;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: var(--bg1);
+}
+
+body::-webkit-scrollbar {
+    width: 0.5vw;
+  }
+  
+body::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 100px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--text);
+    border-radius: 100px;
+}
+
+.par {
+    height: 200vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
+}
+
+.hundred {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
 }
 
 /* Color Schemes */
@@ -53,10 +123,10 @@ body {
     background-color: var(--bg1);
     display: flex;
     justify-content: space-between;
-    position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 1;
     cursor: default;
+    max-height: 7vh;
 }
 
 /* Language Selector */
@@ -65,6 +135,7 @@ body {
     display: inline-block;
     left: 2vw;
     top: 2vh;
+    z-index: 1;
 }
 
 .greeting {
@@ -98,57 +169,54 @@ body {
     position: fixed;
     right: 0;
     min-height: 36px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     display: flex;
+    z-index: 1;
 }
 
 /* First Section */
 .first {
-    background-color: var(--bg1);
     height: 100vh;
     width: 100vw;
     position: relative;
     display: flex;
-    justify-content: space-between;
     scroll-snap-align: start;
 }
 
 .intro {
-    margin-left: 2%;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-left: 2vh;
     position: fixed;
     text-align: start;
     color: var(--textf);
     z-index: 1;
+    top: 43vh;
 }
 
 .intro span {color: var(--text);}
 
 .links {
-    top: 50%;
-    transform: translateY(-50%);
-    margin-right: 2%;
+    margin-right: 2vw;
     right: 0;
     position: absolute;
     text-align: end;
+    top: 43vh;
 }
 
 .link {
     color: var(--text);
     text-decoration: none;
+    padding-bottom: 15px;
 }
 
 .link:hover {text-decoration: underline;}
 
 .scroll {
     position: absolute;
-    margin-bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-bottom: 2vh;
     bottom: 0;
-    text-align: center;
+    left: 45.5vw;
+    text-align: start;
 }
 
 /* Second Section */
@@ -231,4 +299,83 @@ body {
 
     body {font-size: x-large;}
     .content, .toggle, .scroll {font-size: large;}
+}
+
+/* link text */
+@keyframes float {
+    from, to {
+      transform: translateY(-0%);
+    }
+    
+    50% {    
+      transform: translateY(-3%);
+    }
+  }
+
+#text:has(.link:hover) .word:not(.link:hover) {
+    opacity: 0.2;
+}
+
+.link span {
+    display: inline-block;
+}
+
+.link > .outer {
+    transition: transform 350ms ease;
+}
+
+.link:hover > .outer {
+    transition-duration: 800ms;
+}
+
+.link:hover > .outer > .inner {
+    animation: float 5s ease infinite;
+}
+
+.link:hover > .outer:nth-child(1) {
+    transform: translate(var(--loc1), var(--loctwo1)) rotate(var(--rotate1));
+}
+
+.link:hover > .outer:nth-child(2) {
+    transform: translate(var(--loc2), var(--loctwo2)) rotate(var(--rotate2));
+}
+
+.link:hover > .outer:nth-child(3) {
+    transform: translate(var(--loc3), var(--loctwo3)) rotate(var(--rotate3));
+}
+
+.link:hover > .outer:nth-child(4) {
+    transform: translate(var(--loc4), var(--loctwo4)) rotate(var(--rotate4));
+}
+
+.link:hover > .outer:nth-child(5) {
+    transform: translate(var(--loc5), var(--loctwo5)) rotate(var(--rotate5));
+}
+
+.link:hover > .outer:nth-child(6) {
+    transform: translate(var(--loc6), var(--loctwo6)) rotate(var(--rotate6));
+}
+
+.link:hover > .outer:nth-child(7) {
+    transform: translate(var(--loc7), var(--loctwo7)) rotate(var(--rotate7));
+}
+
+.link:hover > .outer:nth-child(8) {
+    transform: translate(var(--loc8), var(--loctwo8)) rotate(var(--rotate8));
+}
+
+.link:hover > .outer:nth-child(9) {
+    transform: translate(var(--loc9), var(--loctwo9)) rotate(var(--rotate9));
+}
+
+.link:hover > .outer:nth-child(10) {
+    transform: translate(var(--loc10), var(--loctwo10)) rotate(var(--rotate10));
+}
+
+.link:hover > .outer:nth-child(11) {
+    transform: translate(var(--loc11), var(--loctwo11)) rotate(var(--rotate11));
+}
+
+.link:hover > .outer:nth-child(12) {
+    transform: translate(var(--loc12), var(--loctwo12)) rotate(var(--rotate12));
 }

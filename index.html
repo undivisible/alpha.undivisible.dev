@@ -10,22 +10,23 @@
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YW9C78ZXL"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
-    <body class="dark">
-        <div class="sticky">
-            <!--language selector-->
-            <div class="dropdown">
-                <div class="greeting">salam!</div>
-                <div class="content">
-                    <a href="" class="link d">салам!</a><br>
-                    <a href="" class="link d">吃了吗？</a>
+    <body class="dark">      
+        <div class="par" id="par"> 
+            <div class="sticky">
+                <!--language selector-->
+                <div class="dropdown">
+                    <div class="greeting">salam!</div>
+                    <div class="content">
+                        <a onclick="russian()" class="link d">салам!</a><br>
+                        <a onclick="chinese()" class="link d">吃了吗？</a>
+                    </div>
                 </div>
+                <!--toggle dark/nord/sepia/light-->
+                <div class="toggle">
+                    <a onclick="toggle()" class="link" id="color">color⠀scheme</a>
+                </div>        
             </div>
-            <!--toggle dark/nord/sepia/light-->
-            <div class="toggle">
-                <a onclick="toggle()">color scheme</a>
-            </div>        
-        </div>
-        <div class="first">
+            <div class="first">
                 <div class="intro">
                     i am <span id="names">max lee carter</span><br>
                     <br>
@@ -35,29 +36,28 @@
                     i speak <span id="langs">english</span> and code in <span id="code">type/javascript</span><br>
                     and i follow <span>islam</span>
                 </div>
-    
                 <div class="links">
-                    <a href="https://t.me/undivisible/" class="link">telegram</a><br>
-                    <a href="https://instagram.com/undivisible_" class="link">instagram</a><br>
-                    <a href="https://github.com/undivisible" class="link">github</a><br>
-                    <a href="mailto:o@undivisible.dev" class="link">email</a><br>
+                    <a href="https://t.me/undivisible/" class="link" id="tg">telegram</a><br>
+                    <a href="https://instagram.com/undivisible_" class="link" id="ig">instagram</a><br>
+                    <a href="https://github.com/undivisible" class="link" id="gh">github</a><br>
+                    <a href="mailto:o@undivisible.dev" class="link" id="email">email</a><br>
                     <br>
-                    <a href="" class="link">all links</a>
+                    <a onclick="links()" class="link" id="all">all⠀links</a>
                 </div>
-    
-                <div class="scroll">scroll down to learn more</div>     
-        </div>
-        <div class="twob">
-            <div class="second">
-                <div class="left element"></div>
-                <a class="upright element" href="">
-                    <div class="title link">skills, education and experience</div>
-                </a>
-                <a class="downright element" href="">          
-                    <div class="title link">about this site</div>
-                </a>
+                <div class="scroll">scroll down to learn more</div>   
             </div>
-        </div>
+            <div class="twob">
+                <div class="second">
+                    <div class="left element"></div>
+                    <a class="upright element" onclick="see()">
+                        <div class="title link">skills, education and experience</div>
+                    </a>
+                    <a class="downright element" onclick="about()">          
+                        <div class="title link">about this site</div>
+                    </a>
+                </div>
+            </div>
+        </div>     
     </body>
     <script src="script.js"></script>
 </html>
