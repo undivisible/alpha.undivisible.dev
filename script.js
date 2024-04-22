@@ -19,17 +19,49 @@ function randoms() {
   });
 }
 
-function scroller() {
-  document.addEventListener("scroll", (event) => {
-    const intro = document.getElementsByClassName("intro");
-    if (once2 == FALSE) {
-      intro.style.add("animation: scroll 1s ease-in forwards;")
+/* function scroller() {
+  const scrollEvent = () => {
+    const intro = document.getElementById("intro");
+    const sticky = document.getElementById("sticky");
+
+    if (!intro || !sticky) {
+      console.log("Could not find elements with IDs 'intro' or 'sticky'");
+      return;
     }
+
+    console.log("Scroll event triggered");
+
+    if (!once2) {
+      intro.style.animationName = "scroll";
+      intro.style.animationDuration = "1s";
+      intro.style.animationTimingFunction = "ease-in";
+      intro.style.animationDirection = "normal";
+
+      sticky.style.animationName = "scroll";
+      sticky.style.animationDuration = "1s";
+      sticky.style.animationTimingFunction = "ease-in";
+      sticky.style.animationDirection = "normal";
+      
+      once = true
+    } 
+    
     else {
-      intro.style.add("animation: scroll 1s ease-in reverse forwards;")
+      intro.style.animationName = "scroll";
+      intro.style.animationDuration = "1s";
+      intro.style.animationTimingFunction = "ease-in";
+      intro.style.animationDirection = "reverse";
+
+      sticky.style.animationName = "scroll";
+      sticky.style.animationDuration = "1s";
+      sticky.style.animationTimingFunction = "ease-in";
+      sticky.style.animationDirection = "reverse";
     }
-  })
-};
+  };
+
+  console.log("this works btw");
+
+  window.addEventListener('scroll', scrollEvent);
+}
 
 
 document.addEventListener("mousemove", parallax);
@@ -40,12 +72,12 @@ function parallax(e) {
     const x = (window.innerWidth - e.pageX * speed) / 500;
     const y = (window.innerHeight - e.pageY * speed) / 500;
     parallax.style.transform = `translateX(${x}px) translateY(${y}px)`;
-}
+} */
 
 function toggle() {
   var body = document.body;
   console.log("a");
-  if (once == false) {
+  if (!once) {
     once = true;
     body.classList.toggle("dark");
   }
@@ -181,5 +213,6 @@ document.addEventListener("DOMContentLoaded", function() {
   fancyText(["color", "tg", "ig", "gh", "email", "all"]); // Pass an array of element IDs
   updateText();
   randoms();
+  scroller();
 });
   

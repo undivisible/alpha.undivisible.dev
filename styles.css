@@ -1,3 +1,9 @@
+@keyframes scroll {
+    100% {
+        top: +100%;
+    }
+}
+
 :root {
     --rotate1: 8deg;
     --loc1: 8%;
@@ -70,20 +76,14 @@ body::-webkit-scrollbar-thumb {
     border-radius: 100px;
 }
 
-.par {
+/* .par {
     height: 200vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative; 
-}
-
-.hundred {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-}
+} */
 
 /* Color Schemes */
 .dark {
@@ -181,26 +181,31 @@ body::-webkit-scrollbar-thumb {
     width: 100vw;
     position: relative;
     display: flex;
+    justify-content: space-between;
     scroll-snap-align: start;
 }
 
 .intro {
-    margin-left: 2vh;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 2%;
     position: fixed;
     text-align: start;
     color: var(--textf);
     z-index: 1;
-    top: 43vh;
+    top: 50vh;
 }
 
 .intro span {color: var(--text);}
 
 .links {
-    margin-right: 2vw;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 2%;
     right: 0;
     position: absolute;
     text-align: end;
-    top: 43vh;
+    top: 50vh;
 }
 
 .link {
