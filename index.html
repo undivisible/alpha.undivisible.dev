@@ -12,12 +12,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body class="dark">      
-        <!--<div class="par" id="par">--> 
             <div class="sticky" id="sticky">
                 <!--language selector-->
                 <div class="dropdown">
                     <div class="greeting">salam!</div>
-                    <div class="content">
+                    <div class="content" id="content">
                         <a onclick="russian()" class="link d">салам!</a><br>
                         <a onclick="chinese()" class="link d">吃了吗？</a>
                     </div>
@@ -50,15 +49,14 @@
             <div class="twob">
                 <div class="second">
                     <div class="left element"></div>
-                    <a class="upright element" onclick="see()">
+                    <a class="upright element" id="upright" onclick="see()">
                         <div class="title link">skills, education and experience</div>
                     </a>
-                    <a class="downright element" onclick="about()">          
+                    <a class="downright element" id="downright" onclick="about()">          
                         <div class="title link">about this site</div>
                     </a>
                 </div>
-            </div>
-       <!--</div>-->     
+            </div>   
     </body>
     <script src="script.js"></script>
 </html>

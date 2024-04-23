@@ -1,6 +1,6 @@
-@keyframes scroll {
+@keyframes swap {
     100% {
-        top: +100%;
+        transform: scale(5);
     }
 }
 
@@ -75,15 +75,6 @@ body::-webkit-scrollbar-thumb {
     background-color: var(--text);
     border-radius: 100px;
 }
-
-/* .par {
-    height: 200vh;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative; 
-} */
 
 /* Color Schemes */
 .dark {
