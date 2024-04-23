@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>salam! | undivisible.dev</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&family=Space+Grotesk&family=Wix+Madefor+Display&family=Rubik&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png"/>
-        <link rel="stylesheet" href="styles.css">
-
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3YW9C78ZXL"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    </head>
-    <body class="dark">      
-            <div class="sticky" id="sticky">
-                <!--language selector-->
-                <div class="dropdown">
-                    <div class="greeting">salam!</div>
-                    <div class="content" id="content">
-                        <a onclick="russian()" class="link d">салам!</a><br>
-                        <a onclick="chinese()" class="link d">吃了吗？</a>
-                    </div>
-                </div>
-                <!--toggle dark/nord/sepia/light-->
-                <div class="toggle">
-                    <a onclick="toggle()" class="link" id="color">color⠀scheme</a>
-                </div>        
+<head>
+    <title>salam! | undivisible.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&family=Space+Grotesk&family=Wix+Madefor+Display&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png"/>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body class="dark">
+    <div class="sticky" id="sticky">
+        <div class="dropdown">
+            <div class="greeting">salam!</div>
+            <div class="content" id="content">
+                <a onclick="swap('r.html', 'content')" class="link d">салам!</a><br>
+                <a onclick="swap('c.html', 'content')" class="link d">吃了吗？</a>
             </div>
-            <div class="first">
-                <div class="intro" id="intro">
-                    i am <span id="names">max lee carter</span><br>
-                    <br>
-                    i am <span>cantonese</span> <br>
-                    i am a <span id="jobs">student</span> from <span>melbourne, australia</span> <br>
-                    <br>
-                    i speak <span id="langs">english</span> and code in <span id="code">type/javascript</span><br>
-                    and i follow <span>islam</span>
-                </div>
-                <div class="links">
-                    <a href="https://t.me/undivisible/" class="link" id="tg">telegram</a><br>
-                    <a href="https://instagram.com/undivisible_" class="link" id="ig">instagram</a><br>
-                    <a href="https://github.com/undivisible" class="link" id="gh">github</a><br>
-                    <a href="mailto:o@undivisible.dev" class="link" id="email">email</a><br>
-                    <br>
-                    <a onclick="links()" class="link" id="all">all⠀links</a>
-                </div>
-                <div class="scroll">scroll down to learn more</div>   
-            </div>
-            <div class="twob">
-                <div class="second">
-                    <div class="left element"></div>
-                    <a class="upright element" id="upright" onclick="see()">
-                        <div class="title link">skills, education and experience</div>
-                    </a>
-                    <a class="downright element" id="downright" onclick="about()">          
-                        <div class="title link">about this site</div>
-                    </a>
-                </div>
-            </div>   
-    </body>
+        </div>
+        <div class="toggle">
+            <a onclick="toggleTheme()" class="link" id="color">color⠀scheme</a>
+        </div>
+    </div>
+    <div class="first">
+        <div class="p intro" id="intro">
+            i am <span id="names">max lee carter</span><br><br>
+            i am <span>cantonese</span> <br>
+            i am a <span id="jobs">student</span> from <span>melbourne, australia</span> <br><br>
+            i speak <span id="langs">english</span> and code in <span id="code">type/javascript</span><br>
+            and i follow <span>islam</span>
+        </div>
+        <div class="links">
+            <a href="https://t.me/undivisible/" class="link" id="tg">telegram</a><br>
+            <a href="https://instagram.com/undivisible_" class="link" id="ig">instagram</a><br>
+            <a href="https://github.com/undivisible" class="link" id="gh">github</a><br>
+            <a href="mailto:o@undivisible.dev" class="link" id="email">email</a><br><br>
+            <a onclick="showLinks()" class="link" id="all">all⠀links</a>
+        </div>
+        <div class="scroll">scroll down to learn more</div>
+    </div>
+    <div class="twob">
+        <div class="second">
+            <div class="left element"></div>
+            <a class="upright element" id="upright" onclick="swap('see.html', 'upright')">
+                <div class="title link">skills, education and experience</div>
+            </a>
+            <a class="downright element" id="downright" onclick="swap('about.html', 'downright')">
+                <div class="title link">about this site</div>
+            </a>
+        </div>
+    </div>
     <script src="script.js"></script>
+</body>
 </html>

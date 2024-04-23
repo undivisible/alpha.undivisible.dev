@@ -1,6 +1,8 @@
 @keyframes swap {
     100% {
-        transform: scale(5);
+        height: 100vh;
+        width: 100vw;
+        z-index: 1;
     }
 }
 
@@ -176,15 +178,17 @@ body::-webkit-scrollbar-thumb {
     scroll-snap-align: start;
 }
 
-.intro {
+.p {
     top: 50%;
     transform: translateY(-50%);
     margin-left: 2%;
-    position: fixed;
     text-align: start;
-    color: var(--textf);
     z-index: 1;
-    top: 50vh;
+}
+
+.intro {
+    position: fixed;
+    color: var(--textf);
 }
 
 .intro span {color: var(--text);}
@@ -374,4 +378,13 @@ body::-webkit-scrollbar-thumb {
 
 .link:hover > .outer:nth-child(12) {
     transform: translate(var(--loc12), var(--loctwo12)) rotate(var(--rotate12));
+}
+
+/* see.html */
+
+.see {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg3);
+    color: var(--text);
 }
