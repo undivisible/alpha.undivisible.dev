@@ -100,8 +100,8 @@ function updateText() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  fancyText(["color", "tg", "ig", "gh", "email", "all"]); // Pass an array of element IDs
-  updateText();
-  randoms();
+    fancyText(["color", "tg", "ig", "gh", "email", "all"]); // Pass an array of element IDs
+    updateText();
+    randoms();
 });
   
