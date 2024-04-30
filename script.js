@@ -40,9 +40,14 @@ function toggleTheme() {
     }
 }
 
-function swap(page, backing) {
-    const bg = document.getElementById(backing);
-    bg.style.animation = 'swap 3s ease-in forwards';
+function swap(page, backing, back) {
+    var bg = document.getElementById(backing);
+    if (!back) {
+        bg.style.animation = 'swap 3s ease-in forwards';
+    }
+    else {
+        bg.style.animation = 'back 3s ease-in forwards';
+    }
     setTimeout(() => {
         window.location.href = page;
     }, 3000);
@@ -100,7 +105,7 @@ function updateText() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  fancyText(["color", "tg", "ig", "gh", "email", "all"]); // Pass an array of element IDs
+  fancyText(["color", "tg", "ig", "gh", "email", "all", "back"]); // Pass an array of element IDs
   updateText();
   randoms();
 });

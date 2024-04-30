@@ -15,8 +15,8 @@
         <div class="dropdown">
             <div class="greeting">salam!</div>
             <div class="content" id="content">
-                <a onclick="swap('r.html', 'content')" class="link d">салам!</a><br>
-                <a onclick="swap('c.html', 'content')" class="link d">吃了吗？</a>
+                <a onclick="swap('r.html', 'content', false)" class="link d">салам!</a><br>
+                <a onclick="swap('c.html', 'content', false)" class="link d">吃了吗？</a>
             </div>
         </div>
         <div class="toggle">
@@ -43,14 +43,13 @@
     <div class="twob">
         <div class="second">
             <div class="left element"></div>
-            <a class="upright element" id="upright" onclick="swap('see.html', 'upright')">
+            <a class="upright element" id="upright" onclick="swap('see.html', 'upright', false)">
                 <div class="title link">skills, education and experience</div>
             </a>
-            <a class="downright element" id="downright" onclick="swap('about.html', 'downright')">
+            <a class="downright element" id="downright" onclick="swap('about.html', 'downright', false)">
                 <div class="title link">about this site</div>
             </a>
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
