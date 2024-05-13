@@ -10,6 +10,7 @@
         color: var(--bg3); 
         height: 100vh;
         width: 100vw;
+        transform: translate(1vw);
     }
 }
 
@@ -126,18 +127,26 @@ body::-webkit-scrollbar-thumb {
     --textf: #eceff48a;
 }
 
+.taiga {
+    --bg1: #00352c;
+    --bg2: #0c3f2f;
+    --bg3: #004f41;
+    --text: #ecf4f2;
+    --textf: #ecf4f28a;
+  }
+
 .sepia {
     --bg1: #eadbcb;
-    --bg2: #dcc1a7;
     --bg3: #e3ceb9;
+    --bg2: #dcc1a7;
     --text: black;
     --textf: #0000008a;
 }
 
 .light {
     --bg1: #eceff4;
-    --bg3: #d8dee9;
-    --bg2: #e5e9f0;
+    --bg3: #e5e9f0;
+    --bg2: #d8dee9;
     --text: black;
     --textf: #0000008a;
 }
@@ -220,18 +229,19 @@ body::-webkit-scrollbar-thumb {
 .intro {
     position: fixed;
     color: var(--textf);
+    max-width: 50vw;
 }
 
 .intro span {color: var(--text);}
 
 .links {
-    top: 50%;
     transform: translateY(-50%);
     margin-right: 2%;
     right: 0;
     position: absolute;
     text-align: end;
     top: 50vh;
+    max-width: 50vw;
 }
 
 .link {
@@ -336,10 +346,32 @@ body::-webkit-scrollbar-thumb {
         
     }
 
-    .content {display: block;}
+    @keyframes swap {
+        1% {
+            z-index: 1;
+            text-decoration: none;
+            color: var(--bg3); 
+        }
+        100% {
+            z-index: 1;
+            text-decoration: none;
+            color: var(--bg3); 
+            height: 100vh;
+            width: 100vw;
+        }
+    }
 
-    body {font-size: x-large;}
-    .content, .toggle, .scroll {font-size: large;}
+    .downright .title {
+        bottom: none;
+        margin-bottom: none;
+        top: 0;
+        margin-top: 1vh;
+    }
+
+    /*.content {display: block;}*/
+
+    body {font-size: 10px;}
+    .content, .toggle, .scroll {font-size: 7px;}
 }
 
 /* link text */
@@ -429,7 +461,8 @@ body::-webkit-scrollbar-thumb {
 }
 
 .seea {
-    height: 93vh;
+    top: 7vh;
+    height: 99vh;
     width: 100vw;
     background-color: var(--bg2);
     color: var(--text);
@@ -438,4 +471,9 @@ body::-webkit-scrollbar-thumb {
     border-radius: 30px;
     opacity: 0;
     animation: popup 1s ease-in forwards;
+}
+
+.about {
+    margin: 50px;
+    font-size: 24px;
 }

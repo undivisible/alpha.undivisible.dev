@@ -1,5 +1,16 @@
-let currentTheme = 'dark';
-let once2 = false;
+var currentTheme = "taiga";
+var once2 = false;
+const palette = document.getElementById('color');
+
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+function setCookie(name, value) {
+    document.cookie = name + '=' + (value || '') + '; path=/';
+}
 
 function randoms() {
     const links = document.querySelectorAll('.link');
@@ -17,27 +28,39 @@ function randoms() {
 function toggleTheme() {
     const body = document.body;
     switch (currentTheme) {
+        case 'taiga':
+            body.classList.add('dark');
+            body.classList.remove('taiga');
+            currentTheme = 'dark';
+            setCookie('theme', 'dark');
+            break;
         case 'dark':
             body.classList.add('nord');
-            body.classList.remove('dark');
+            body.classList.remove('taiga');
             currentTheme = 'nord';
+            setCookie('theme', 'nord');
             break;
         case 'nord':
             body.classList.add('sepia');
             body.classList.remove('nord');
             currentTheme = 'sepia';
+            setCookie('theme', 'sepia');
             break;
         case 'sepia':
             body.classList.add('light');
             body.classList.remove('sepia');
             currentTheme = 'light';
+            setCookie('theme', 'light');
             break;
         case 'light':
-            body.classList.add('dark');
+            body.classList.add('taiga');
             body.classList.remove('light');
-            currentTheme = 'dark';
+            currentTheme = 'taiga';
+            setCookie('theme', 'taiga');
             break;
     }
+    palette.innerHTML = currentTheme;
+    fancyText(['color']);
 }
 
 function swap(page, backing, back) {
@@ -52,18 +75,22 @@ function swap(page, backing, back) {
         });
         bg.style.animation = 'swap 3s ease-in forwards';
     }
-    
     else {
         const wrapper = document.getElementById("wrapper");
-        const body = document.getElementById("body");
         wrapper.style.animation = 'onexit 1.5s ease-out forwards';
         setTimeout(() => {
-            body.style.animation = 'exit 1.5s ease-in forwards'; 
+            document.body.style.animation = 'exit 1.5s ease-in forwards'; 
         }, 1500);
+        onexternal = false;
     }
     setTimeout(() => {
         window.location.href = page;
+        let pageloc = page;
     }, 3000);
+}
+
+function lang() {
+    
 }
 
 function showLinks() {
@@ -118,8 +145,36 @@ function updateText() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  fancyText(["color", "tg", "ig", "gh", "email", "all", "back"]); // Pass an array of element IDs
-  updateText();
-  randoms();
+    const savedTheme = getCookie('theme');
+    const onexternal = getCookie('external');
+    const location = getCookie('location');
+    if (savedTheme) {
+        const body = document.body;
+        body.classList.add(savedTheme);
+        currentTheme = savedTheme;
+        palette.innerHTML = currentTheme;
+    }
+    fancyText(["color", "tg", "ig", "gh", "email", "all", "back", "abouthover"]); // Pass an array of element IDs
+    updateText();
+    randoms();
+    if (onexternal == 'true') {
+        var see = document.getElementById('see');
+        var about = document.getElementById('about');
+        var greet = document.getElementById('greet');
+        var onel = document.getElementById('onel');
+        var twol = document.getElementById('twol');
+        if (location = "see") {
+            see.style.animation('popup');
+            greet.html('skills, education and experience');
+            onel.innerHTML = '';
+            twol.innerHTML = '';
+        }
+        else if (location = "about") {
+            see.style.animation('popup');
+            greet.innerHTML = 'skills, education and experience';
+            onel.innerHTML = '';
+            twol.innerHTML = '';
+        }
+    }
 });
   
